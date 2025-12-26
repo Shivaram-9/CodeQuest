@@ -1,0 +1,252 @@
+.coding-portal {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.challenge-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background: white;
+}
+
+.coding-workspace {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 1.5rem;
+  height: calc(100vh - 150px);
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.challenge-description {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.difficulty-badge.easy {
+  background: #e6ffe6;
+  color: #008000;
+}
+
+.difficulty-badge.medium {
+  background: #fff3e6;
+  color: #cc7700;
+}
+
+.difficulty-badge.hard {
+  background: #ffe6e6;
+  color: #cc0000;
+}
+
+.test-cases {
+  margin-top: 1.5rem;
+}
+
+.test-case {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.code-editor-section {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.editor-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.theme-selector {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background: white;
+}
+
+.code-editor {
+  flex: 1;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.code-editor textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.code-editor.dark textarea {
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.editor-actions {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.editor-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.editor-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.run-button {
+  background: var(--primary-color);
+  color: white;
+}
+
+.submit-button {
+  background: var(--accent-color);
+  color: white;
+}
+
+.ai-assistant {
+  display: none;
+}
+
+.challenge-nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.challenge-nav button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.challenge-nav button:hover,
+.challenge-nav button.active {
+  color: var(--primary-color);
+}
+
+.challenge-nav button svg {
+  font-size: 1rem;
+}
+
+.challenge-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1rem;
+}
+
+.challenge-constraints ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.challenge-constraints li {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.challenge-explanation p {
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .coding-workspace {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .challenge-description,
+  .code-editor-section {
+    height: auto;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .coding-workspace {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .challenge-description,
+  .code-editor-section {
+    max-height: none;
+  }
+
+  .coding-portal {
+    padding: 1rem;
+  }
+
+  .challenge-filters {
+    flex-direction: column;
+  }
+}
